@@ -1,0 +1,12 @@
+= form_for event.comments.build, url: event_comments_path(event, format: :json), remote: true, html: {:class => 'form'} do |f|
+  = f.hidden_field :event_id
+  .group
+    = f.label :name, t("activerecord.attributes.comment.author", default: "Author"), class: 'label'
+    = f.text_field :author, class: 'text_field'
+  .group
+    = f.label :body, t("activerecord.attributes.comment.body", default: "Comment"), class: 'label'
+    = f.text_area :body, class: 'text_area', rows: 4
+  .group.navform.wat-cf
+    %button.button{:type => "submit"}
+      = image_tag("web-app-theme/icons/tick.png", :alt => t("web-app-theme.save", default: "Save"))
+      = t("web-app-theme.save", default: "Post")

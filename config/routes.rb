@@ -1,6 +1,6 @@
 DevTime::Application.routes.draw do
   resources :events do
-    resources :comments
+    resources :comments, only: %w{create destroy}
   end
 
   root :to => 'events#index'

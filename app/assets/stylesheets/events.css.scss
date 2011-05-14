@@ -3,3 +3,21 @@
   They will automatically be included in application.css.
   You can use Sass (SCSS) here: http://sass-lang.com/
 */
+.event {
+  width: 100%;
+  margin-bottom: 15px;
+  .name {
+    padding: 10px;
+    font-weight: bold;
+    text-align: left;
+    background: #576C82;
+    color: #FFF;
+    font-weight:normal;
+    padding:3px;
+    a:hover, a:visited {
+      color: #FFF; }
+    a:hover {
+      text-decoration: underline; } }
+  .description {
+    padding: 10px;
+    color: #456; } }

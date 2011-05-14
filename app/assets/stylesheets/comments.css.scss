@@ -3,3 +3,32 @@
   They will automatically be included in application.css.
   You can use Sass (SCSS) here: http://sass-lang.com/
 */
+.comments {
+  width: 70%;
+  margin-top: 15px;
+  .title {
+    padding: 10px;
+    font-weight: bold;
+    text-align: left;
+    background: #576C82;
+    color: #FFF;
+    font-weight:normal;
+    padding:3px; }
+  .all, .form {
+    width: 80%;
+    padding: 10px;
+    color: #456; }
+  .all .comment {
+    margin: 0 0 8px 20px;
+    padding: 12px;
+    background: #EEE;
+    .author {
+      font-weight: bold;
+      margin-right: 15px; }
+    .del {
+      float: right;
+      margin: -10px -10px 0 0;
+      a {
+        margin: 0;
+        img {
+          margin: 0 -2px -3px 0 !important; } } } } }

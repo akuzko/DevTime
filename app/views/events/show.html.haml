@@ -1,22 +1,26 @@
 .block
   .secondary-navigation
     %ul.wat-cf
-      %li.first= link_to "#{t("web-app-theme.list", :default => "List")}", events_path
-      %li= link_to "#{t("web-app-theme.new", :default => "New")}", new_event_path
-      %li.active= link_to "#{t("web-app-theme.show", :default => "Show")}", event_path
+      %li.first= link_to t("web-app-theme.list", default: "List"), events_path
+      %li= link_to t("web-app-theme.new", default: "New"), new_event_path
+      %li.active= link_to t("web-app-theme.show", default: "Show"), event_path
   .content
     .inner
       %p
         %b
-          = t("activerecord.attributes.event.name", :default => t("activerecord.labels.name", :default => "Name"))
+          = t("activerecord.attributes.event.name", default: t("activerecord.labels.name", default: "Name"))
           \:
         = @event.name
       %p
         %b
-          = t("activerecord.attributes.event.description", :default => t("activerecord.labels.description", :default => "Description"))
+          = t("activerecord.attributes.event.description", default: t("activerecord.labels.description", default: "Description"))
           \:
         = @event.description
       .wat-cf
-        = link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_event_path(@event), :class => "button"
-        = link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}") + " " + t("web-app-theme.delete", :default => "Delete"), event_path(@event), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"
+        = link_to image_tag("web-app-theme/icons/application_edit.png", alt: t("web-app-theme.edit", default: "Edit")) + " " + t("web-app-theme.edit", default: "Edit"), edit_event_path(@event), class: "button"
+        = link_to image_tag("web-app-theme/icons/cross.png", alt: t("web-app-theme.delete", default: "Delete")) + " " + t("web-app-theme.delete", default: "Delete"), @event, method: "delete", class: "button", confirm: t("web-app-theme.confirm", default: "Are you sure?")
+      .comments
+        .title Comments
+        .all= render @event.comments
+        .form= render partial: 'comments/form', locals: {:event => @event}
 - content_for :sidebar, render(:partial => 'sidebar')
