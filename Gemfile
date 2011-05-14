@@ -14,8 +14,12 @@ gem 'uglifier'
 
 gem 'jquery-rails'
 
+gem 'haml'
+gem 'redis'
+
 # Use unicorn as the web server
 # gem 'unicorn'
+gem 'mongrel'
 
 # Deploy with Capistrano
 # gem 'capistrano'
