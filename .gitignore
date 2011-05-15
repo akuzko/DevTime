@@ -4,3 +4,4 @@ log/*.log
 tmp/
 .idea/
 .sass-cache/
+app/node/node_modules/

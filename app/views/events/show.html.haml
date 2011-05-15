@@ -19,8 +19,10 @@
       .wat-cf
         = link_to image_tag("web-app-theme/icons/application_edit.png", alt: t("web-app-theme.edit", default: "Edit")) + " " + t("web-app-theme.edit", default: "Edit"), edit_event_path(@event), class: "button"
         = link_to image_tag("web-app-theme/icons/cross.png", alt: t("web-app-theme.delete", default: "Delete")) + " " + t("web-app-theme.delete", default: "Delete"), @event, method: "delete", class: "button", confirm: t("web-app-theme.confirm", default: "Are you sure?")
-      .comments
+      #comments
         .title Comments
         .all= render @event.comments
         .form= render partial: 'comments/form', locals: {:event => @event}
+:javascript
+  app.params.eventId = #{@event.id}
 - content_for :sidebar, render(:partial => 'sidebar')

@@ -1,4 +1,15 @@
 class CommentsController < ApplicationController
+  # GET /comments/1
+  # GET /comments/1.json
+  def show
+    @comment = Comment.find(params[:id])
+
+    respond_to do |format|
+      format.html { render @comment }
+      format.json { render json: @comment }
+    end
+  end
+
   # POST /comments
   # POST /comments.json
   def create

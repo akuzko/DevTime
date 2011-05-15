@@ -12,6 +12,6 @@ class CommentObserver < ActiveRecord::Observer
   private
 
   def publish action, comment
-    @@redis.publish "comments.#{comment.event.id}", {:action => action, :comment => comment}.to_json
+    @@redis.publish "comments.#{comment.event_id}", {:action => action, :comment => comment.id}.to_json
   end
 end
